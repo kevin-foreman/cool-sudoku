@@ -1,3 +1,11 @@
+// add functionality to the start button to call the puzzle demensions when clicked
+
+// call the numbers based on how many times....
+
+// make a timer so the user only has a certain amount of time to complete the puzzle
+
+//  end the user's turn if time runs out
+
 var userInitGrid = [
     0, 0, 2, 
 ]
