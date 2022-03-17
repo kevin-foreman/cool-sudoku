@@ -6,31 +6,47 @@
 
 //  end the user's turn if time runs out
 
-var puzzleButtonEl = document.querySelector("#start")
+var puzzleButtonEl = document.querySelector("#btn");
+var puzzleContainerEl = document.querySelector("table");
 
+// establish the baseline grid for the numbers
 var userInitGrid = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
     [0, 0, 0, 0, 0, 0, 0, 0, 0,]
 ]
 
-// function to dynamically generate 
+// function to dynamically generate number fields
 function generateGrid(count, values) {
-    for (i = 0; i <userInitGrid.length; i++) {
-
+    console.log("click")
+    for (i = 0; i < userInitGrid.length; i++) {
+    for (j = 0; j < userInitGrid[i].length; j++) {
+        console.log(userInitGrid[i][j]);
+    }
     }
 }
 
+
+// pull a puzzle from the API and print to page
 var puzzleGenerate = function() {
     apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
     return;
 };
 
+function buttonClickHandler(event) {
+    var cellClick = event.target.getAttribute("data-cell");
+    // console.log(cell);
+    if (cell) {
+    puzzle(grid);
 
+    grid.textContent = "";
+    }
+};
 
+puzzleButtonEl.addEventListener("click", generateGrid);
