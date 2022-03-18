@@ -6,6 +6,7 @@
 body {
     background: #113831;
     border: 3px solid #fad118;
+    color: #fad118;
 }
 
 header {
@@ -13,11 +14,10 @@ header {
     border: 3px solid #113831;
 }
 
-header h1 {
+header, h1 {
     font-size: 40px;
     font-weight: bold;
     padding-bottom: 5px;
-    padding-right: 10px;
     color: #113831;
 }
 
@@ -29,4 +29,9 @@ header h1 {
 
 .rules {
     color: #fad118;
+}
+
+table, tr, td {
+    border: 1px solid #fad118;
+    border-collapse: collapse;
 }
