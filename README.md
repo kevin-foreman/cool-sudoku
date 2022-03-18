@@ -14,10 +14,15 @@ Our game is simple yet challenging and we belive it is just the right stepping s
 ## API Reference 
 
 ## Acknowledgements
-
+https://nowispow.com/html-table-sudoku (inspiration)
 ## Contributors
-
+Kevin Foreman
+Samantha Wolff 
+Monica Solano
 ## Deployment
 
 ## Screenshots
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
+## 🔗 Links
+https://www.w3schools.com/
