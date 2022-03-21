@@ -15,8 +15,11 @@
 // add data-cell="1" ,, data-cell="2" ,, data-cell="3" etc... to html???
 // trim the html down to just 9 columns and nine rows and use JS to dynamically add the content from the API call
 
+// create querySelectors to represent the areas we want to react to user input
 var puzzleButtonEl = document.querySelector("#btn");
 var puzzleContainerEl = document.querySelector("table");
+var rowZeroCellsEl = document.querySelector("#zero");
+var rowOneCellsEl = document.querySelector("#one");
 
 // establish the baseline grid for the numbers
 
@@ -74,19 +77,26 @@ function generateGrid(count, values) {
 
 
 // pull a puzzle from the API and print to page
-function puzzleGenerate() {
+function generatePuzzle() {
     var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
     fetch(apiUrl).then(function(response) {
-        console.log(response);
+        
     if (response.ok) {
         response.json().then(function(data) {
-        displayPuzzle(data, array)    
-        })
+        // displayPuzzle(data, array);    
+        }) 
+        console.log(response);
     }
-    })
+    }) 
+    
     
 };
-puzzleGenerate();
+generatePuzzle();
+
+// Add function to allow user to input a number from 1-9 into each cell using event delegation
+function addNumber() {
+    console.log("You clicked a cell!");
+} 
 
 
 function buttonClickHandler(event) {
@@ -100,3 +110,5 @@ function buttonClickHandler(event) {
 };
 
 puzzleButtonEl.addEventListener("click", generateGrid);
+rowZeroCellsEl.addEventListener("click", addNumber);
+rowOneCellsEl.addEventListener("click", addNumber);
