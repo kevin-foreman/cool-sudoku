@@ -11,22 +11,55 @@
 // Bulma has it's own button styling, so we need to figure out which style of button we want so we can add that to the html as well
 // looking through jQuery documentation for a grid style layout to generate dynamically
 // formatting api URL from noon today
+// One option for generating the puzzle could be starting with the same puzzle hints and just shuffle them around each time the user restarts
+
 
 var puzzleButtonEl = document.querySelector("#btn");
 var puzzleContainerEl = document.querySelector("table");
 
 // establish the baseline grid for the numbers
-var userInitGrid = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-]
+
+// using an array of pre-defined numbers and shuffle them around
+var startingPuzzle = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9,],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0,],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5,],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0,],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0,],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3,],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6,],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1,]
+];
+
+// shuffle the order of the numbers
+function shufflePuzzle(array) {
+    var puzzleIndex = startingPuzzle.length, randomIndex;
+    while (puzzleIndex != 0) {
+        randomIndex = Math.floor(Math.random() * puzzleIndex);
+        puzzleIndex--;
+        [array[puzzleIndex], array[randomIndex]] = [
+            array[randomIndex], array[puzzleIndex]
+        ];
+        
+    };
+};
+        shufflePuzzle(startingPuzzle);
+        console.log(startingPuzzle);
+    
+
+// Test using an empty grid and add numbers dynamically
+// var userInitGrid = [
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+//     [0, 0, 0, 0, 0, 0, 0, 0, 0,]
+// ]
 
 // function to dynamically generate number fields
 function generateGrid(count, values) {
