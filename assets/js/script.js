@@ -6,6 +6,12 @@
 
 //  end the user's turn if time runs out
 
+// notes for class: Need to add moment to the html
+// need to remove one of the "this is easy..."
+// Bulma has it's own button styling, so we need to figure out which style of button we want so we can add that to the html as well
+// looking through jQuery documentation for a grid style layout to generate dynamically
+// formatting api URL from noon today
+
 var puzzleButtonEl = document.querySelector("#btn");
 var puzzleContainerEl = document.querySelector("table");
 
@@ -35,8 +41,8 @@ function generateGrid(count, values) {
 
 // pull a puzzle from the API and print to page
 var puzzleGenerate = function() {
-    apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-    return;
+    var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
+    
 };
 
 function buttonClickHandler(event) {
