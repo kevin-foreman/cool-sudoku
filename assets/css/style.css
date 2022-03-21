@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #113831;
+    border: 3px solid #fad118;
+    color: #fad118;
+}
+
+header {
+    background: #fad118;
+    border: 3px solid #113831;
+}
+
+header, h1 {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: #113831;
+}
+
+.rules-header {
+    font-size: 25px;
+    color: #fad118;
+    border-bottom: 2px solid #fad118;
+}
+
+.rules {
+    color: #fad118;
+}
+
+table, tr, td {
+    border: 1px solid #fad118;
+    border-collapse: collapse;
+}
