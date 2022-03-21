@@ -14,6 +14,8 @@
 // One option for generating the puzzle could be starting with the same puzzle hints and just shuffle them around each time the user restarts
 // add data-cell="1" ,, data-cell="2" ,, data-cell="3" etc... to html???
 // trim the html down to just 9 columns and nine rows and use JS to dynamically add the content from the API call
+// if we go with hard coded cells (which is fine) consider adding "contenteditable="true" so the user can input text
+// would just have to add some kind of listener to capture what they enter
 
 // create querySelectors to represent the areas we want to react to user input
 var puzzleButtonEl = document.querySelector("#btn");
@@ -93,7 +95,7 @@ function generatePuzzle() {
 };
 generatePuzzle();
 
-// Add function to allow user to input a number from 1-9 into each cell using event delegation
+// Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
     console.log("You clicked a cell!");
 } 
