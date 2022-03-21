@@ -75,7 +75,7 @@ function generateGrid(count, values) {
         console.log(userInitGrid[i][j]);
     }
     }
-}
+};
 
 
 // pull a puzzle from the API and print to page
