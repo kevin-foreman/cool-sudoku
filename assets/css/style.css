@@ -36,15 +36,12 @@ table, tr, td {
     border-collapse: collapse;
 }
 
-tr, td {
-    
-}
-
 table {
-    /*border: 3px solid #fad118;*/
+    border: 3px solid #fad118;
     width: 500px;
     height: 500px;
 }
+
 
 .top-left {
     background: lime;
@@ -81,3 +78,12 @@ table {
 .bottom-right {
     background: purple;
 }
+
+.row-2, .row-5 {
+    border-bottom: 3px solid #fad118;
+}
+
+.border {
+    border-right: 3px solid #fad118;
+}
+
