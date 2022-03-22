@@ -55,17 +55,7 @@ var rowOneCellsEl = document.querySelector("#one");
 //         console.log(startingPuzzle);
 
 // Test using an empty grid and add numbers dynamically
-var userInitGrid = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0]
-];
+var userInitGrid = [];
 
 // function to dynamically generate number fields
 
@@ -76,7 +66,7 @@ var userInitGrid = [
 // inside the second for loop will have the actual td content
 // set attribute to each td to get the number in there
 function generateGrid(count, values) {
-console.log("click");
+// console.log("click");
 for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
     // console.log(userInitGrid[i][j]);
@@ -92,7 +82,7 @@ function displayPuzzle(grid, data) {
 
     };
     var puzzleGrid = document.appendChild(tr, td);
-    console.log(tr, td);
+    // console.log(tr, td);
 };
 
 // pull a puzzle from the API and print to page
@@ -107,7 +97,7 @@ fetch(apiUrl).then(function (response) {
     if (response.ok) {
     response.json().then(function (data) {
         // displayPuzzle(data, array);
-    userInitGrid.push(data);
+    userInitGrid.push(data.board);
 
         console.log(userInitGrid);
     });
