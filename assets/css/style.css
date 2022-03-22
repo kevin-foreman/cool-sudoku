@@ -35,3 +35,49 @@ table, tr, td {
     border: 1px solid #fad118;
     border-collapse: collapse;
 }
+
+tr, td {
+    
+}
+
+table {
+    /*border: 3px solid #fad118;*/
+    width: 500px;
+    height: 500px;
+}
+
+.top-left {
+    background: lime;
+}
+
+.top-middle {
+    background: greenyellow;
+}
+
+.top-right {
+    background: green;
+}
+
+.middle-left {
+    background: skyblue;
+}
+
+.middle-middle {
+    background: teal;
+}
+
+.middle-right {
+    background: blue;
+}
+
+.bottom-left {
+    background: pink;
+}
+
+.bottom-middle {
+    background: plum;
+}
+
+.bottom-right {
+    background: purple;
+}
