@@ -25,6 +25,9 @@ header, h1 {
     font-size: 25px;
     color: #fad118;
     border-bottom: 2px solid #fad118;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto 35px auto;
 }
 
 .rules {
@@ -43,7 +46,6 @@ table {
     /*width: 500px;
     height: 500px;*/
 }
-
 
 .top-left {
     background: #004f0e;
