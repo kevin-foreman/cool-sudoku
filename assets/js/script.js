@@ -48,8 +48,8 @@ function generatePuzzle() {
         if (response.ok) {
         response.json().then(function (data) {
             // displayPuzzle(data, array);
-        userInitGrid.push(data.board);
-        // enerateGrid();
+        userInitGrid = data.board;
+        generateGrid();
     
             console.log(userInitGrid);
         });
@@ -57,7 +57,7 @@ function generatePuzzle() {
         // generatePuzzle();
     });
     };
-
+console.log(userInitGrid);
 // function to dynamically generate number fields
 
 // Create 2 for loops
