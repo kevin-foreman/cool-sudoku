@@ -25,7 +25,7 @@ var rowOneCellsEl = document.querySelector("#one");
 
 // establish the baseline grid for the numbers
 
-// // using an array of pre-defined numbers and shuffle them around
+// using an array of pre-defined numbers and shuffle them around
 // var startingPuzzle = [
 //     [5, 3, 0, 0, 7, 0, 0, 0, 0,],
 //     [0, 0, 0, 0, 8, 0, 0, 7, 9,],
@@ -85,9 +85,11 @@ function generatePuzzle() {
         
     if (response.ok) {
         response.json().then(function(data) {
-        // displayPuzzle(data, array);    
+        // displayPuzzle(data, array);
+        
+        console.log(data);
         }) 
-        console.log(response);
+        
     }
     }) 
     
