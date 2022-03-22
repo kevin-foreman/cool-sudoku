@@ -22,6 +22,14 @@ var puzzleButtonEl = document.querySelector("#btn");
 var puzzleContainerEl = document.querySelector("table");
 var rowZeroCellsEl = document.querySelector("#zero");
 var rowOneCellsEl = document.querySelector("#one");
+var rowTwoCellsEl = document.querySelector("#two");
+var rowThreeCellsEl = document.querySelector("#three");
+var rowFourCellsEl = document.querySelector("#four");
+var rowFiveCellsEl = document.querySelector("#five");
+var rowSixCellsEl = document.querySelector("#six");
+var rowSevenCellsEl = document.querySelector("#seven");
+var rowEightCellsEl = document.querySelector("#eight");
+
 // var solveButtonEl = document.querySelector("#btn");
 
 // establish the baseline grid for the numbers
@@ -108,7 +116,7 @@ fetch(apiUrl).then(function (response) {
 
 // Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
-  // console.log("You clicked a cell!");
+  console.log("You clicked a cell!");
 }
 
 function buttonClickHandler(event) {
@@ -130,6 +138,13 @@ function buttonClickHandler(event) {
 puzzleButtonEl.addEventListener("click", generatePuzzle);
 rowZeroCellsEl.addEventListener("click", addNumber);
 rowOneCellsEl.addEventListener("click", addNumber);
+rowTwoCellsEl.addEventListener("click", addNumber);
+rowThreeCellsEl.addEventListener("click", addNumber);
+rowFourCellsEl.addEventListener("click", addNumber);
+rowFiveCellsEl.addEventListener("click", addNumber);
+rowSixCellsEl.addEventListener("click", addNumber);
+rowSevenCellsEl.addEventListener("click", addNumber);
+rowEightCellsEl.addEventListener("click", addNumber);
 
 // once the button is clicked, start a timer
 // clicking start timer 
