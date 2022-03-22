@@ -29,41 +29,34 @@ var rowFiveCellsEl = document.querySelector("#five");
 var rowSixCellsEl = document.querySelector("#six");
 var rowSevenCellsEl = document.querySelector("#seven");
 var rowEightCellsEl = document.querySelector("#eight");
-
 // var solveButtonEl = document.querySelector("#btn");
 
 // establish the baseline grid for the numbers
 
-// using an array of pre-defined numbers and shuffle them around
-// var startingPuzzle = [
-//     [5, 3, 0, 0, 7, 0, 0, 0, 0,],
-//     [0, 0, 0, 0, 8, 0, 0, 7, 9,],
-//     [6, 0, 0, 1, 9, 5, 0, 0, 0,],
-//     [0, 0, 0, 4, 1, 9, 0, 0, 5,],
-//     [0, 9, 8, 0, 0, 0, 0, 6, 0,],
-//     [0, 6, 0, 0, 0, 0, 2, 8, 0,],
-//     [8, 0, 0, 0, 6, 0, 0, 0, 3,],
-//     [7, 0, 0, 0, 2, 0, 0, 0, 6,],
-//     [4, 0, 0, 8, 0, 3, 0, 0, 1,]
-// ];
-
-// // shuffle the order of the numbers
-// function shufflePuzzle(array) {
-//     var puzzleIndex = startingPuzzle.length, randomIndex;
-//     while (puzzleIndex != 0) {
-//         randomIndex = Math.floor(Math.random() * puzzleIndex);
-//         puzzleIndex--;
-//         [array[puzzleIndex], array[randomIndex]] = [
-//             array[randomIndex], array[puzzleIndex]
-//         ];
-
-//     };
-// };
-//         shufflePuzzle(startingPuzzle);
-//         console.log(startingPuzzle);
-
-// Test using an empty grid and add numbers dynamically
+// Using an empty array and add numbers dynamically with the response from the API
 var userInitGrid = [];
+
+// pull a puzzle from the API
+// push matrix array into empty array
+// if push does not work try to concat
+// how to append the items to the page
+// this will happen on click
+// conditional to ... 
+function generatePuzzle() {
+    var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+        response.json().then(function (data) {
+            // displayPuzzle(data, array);
+        userInitGrid.push(data.board);
+        // enerateGrid();
+    
+            console.log(userInitGrid);
+        });
+        }
+        // generatePuzzle();
+    });
+    };
 
 // function to dynamically generate number fields
 
@@ -77,7 +70,7 @@ function generateGrid(count, values) {
 // console.log("click");
 for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
-    // console.log(userInitGrid[i][j]);
+    console.log(userInitGrid[i][j]);
     }
 }
 };
@@ -93,30 +86,9 @@ function displayPuzzle(grid, data) {
     // console.log(tr, td);
 };
 
-// pull a puzzle from the API and print to page
-// push matrix array into empty array
-// if push does not work try to concat
-// how to append the items to the page
-// this will happen on click
-// conditional to 
-function generatePuzzle() {
-var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-fetch(apiUrl).then(function (response) {
-    if (response.ok) {
-    response.json().then(function (data) {
-        // displayPuzzle(data, array);
-    userInitGrid.push(data.board);
-
-        console.log(userInitGrid);
-    });
-    }
-    // generatePuzzle();
-});
-};
-
 // Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
-  console.log("You clicked a cell!");
+  // console.log("You clicked a cell!");
 }
 
 function buttonClickHandler(event) {
