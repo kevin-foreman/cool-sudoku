@@ -47,72 +47,88 @@ var rowOneCellsEl = document.querySelector("#one");
 //         [array[puzzleIndex], array[randomIndex]] = [
 //             array[randomIndex], array[puzzleIndex]
 //         ];
-        
+
 //     };
 // };
 //         shufflePuzzle(startingPuzzle);
 //         console.log(startingPuzzle);
-    
 
 // Test using an empty grid and add numbers dynamically
 var userInitGrid = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-]
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+];
 
 // function to dynamically generate number fields
-function generateGrid(count, values) {
-    console.log("click")
-    for (i = 0; i < userInitGrid.length; i++) {
-    for (j = 0; j < userInitGrid[i].length; j++) {
-        console.log(userInitGrid[i][j]);
-    }
-    }
-};
 
+// inside the first for loop handle the individual rows
+// inside the second for loop will have the actual td content
+// set attribute to each td to get the number in there
+function generateGrid(count, values) {
+console.log("click");
+for (i = 0; i < userInitGrid.length; i++) {
+    for (j = 0; j < userInitGrid[i].length; j++) {
+    console.log(userInitGrid[i][j]);
+    }
+}
+};
+//  generateGrid();
+console.log(userInitGrid);
 
 // pull a puzzle from the API and print to page
+// Create 2 for loops
+// loop through each array of 9
+// then loop through all 9 arrays
+// push matrix array into empty array
+// if push does not work try to concat
+// how to append the items to the page
+// this will happen on click
+// conditional to 
 function generatePuzzle() {
-    var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-    fetch(apiUrl).then(function(response) {
-        
+var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
+fetch(apiUrl).then(function (response) {
     if (response.ok) {
-        response.json().then(function(data) {
+    response.json().then(function (data) {
         // displayPuzzle(data, array);
-        
+
         console.log(data);
-        }) 
-        
+    });
     }
-    }) 
-    
-    
+});
 };
 generatePuzzle();
 
 // Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
-    console.log("You clicked a cell!");
-} 
-
+  console.log("You clicked a cell!");
+}
 
 function buttonClickHandler(event) {
-    var cellClick = event.target.getAttribute("data-cell");
-    // console.log(cell);
-    if (cell) {
+    // use this function to do local storage fetch
+  var cellClick = event.target.getAttribute("data-cell");
+  // console.log(cell);
+  if (cell) {
     puzzle(grid);
 
     grid.textContent = "";
-    }
+  };
 };
+
+// how to handle local storage
+// save the matrix to a global variable
+// refresh will go to local storage instead of the fetch
+// on initial page load, grab information from local storage
 
 puzzleButtonEl.addEventListener("click", generateGrid);
 rowZeroCellsEl.addEventListener("click", addNumber);
 rowOneCellsEl.addEventListener("click", addNumber);
+
+// once the button is clicked, start a timer
+// clicking start timer 
