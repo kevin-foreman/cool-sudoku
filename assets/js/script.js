@@ -22,6 +22,7 @@ var puzzleButtonEl = document.querySelector("#btn");
 var puzzleContainerEl = document.querySelector("table");
 var rowZeroCellsEl = document.querySelector("#zero");
 var rowOneCellsEl = document.querySelector("#one");
+// var solveButtonEl = document.querySelector("#btn");
 
 // establish the baseline grid for the numbers
 
@@ -68,6 +69,9 @@ var userInitGrid = [
 
 // function to dynamically generate number fields
 
+// Create 2 for loops
+// loop through each array of 9 numbers
+// then loop through all 9 arrays
 // inside the first for loop handle the individual rows
 // inside the second for loop will have the actual td content
 // set attribute to each td to get the number in there
@@ -75,17 +79,23 @@ function generateGrid(count, values) {
 console.log("click");
 for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
-    console.log(userInitGrid[i][j]);
+    // console.log(userInitGrid[i][j]);
     }
 }
 };
 //  generateGrid();
-console.log(userInitGrid);
+
+// function to display the puzzle to the grid
+function displayPuzzle(grid, data) {
+    if (data.length === 0) {
+        puzzleContainerEl.textContent = "No puzzle found.";
+
+    };
+    var puzzleGrid = document.appendChild(tr, td);
+    console.log(tr, td);
+};
 
 // pull a puzzle from the API and print to page
-// Create 2 for loops
-// loop through each array of 9
-// then loop through all 9 arrays
 // push matrix array into empty array
 // if push does not work try to concat
 // how to append the items to the page
@@ -97,17 +107,18 @@ fetch(apiUrl).then(function (response) {
     if (response.ok) {
     response.json().then(function (data) {
         // displayPuzzle(data, array);
+    userInitGrid.push(data);
 
-        console.log(data);
+        console.log(userInitGrid);
     });
     }
+    // generatePuzzle();
 });
 };
-generatePuzzle();
 
 // Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
-  console.log("You clicked a cell!");
+  // console.log("You clicked a cell!");
 }
 
 function buttonClickHandler(event) {
@@ -126,7 +137,7 @@ function buttonClickHandler(event) {
 // refresh will go to local storage instead of the fetch
 // on initial page load, grab information from local storage
 
-puzzleButtonEl.addEventListener("click", generateGrid);
+puzzleButtonEl.addEventListener("click", generatePuzzle);
 rowZeroCellsEl.addEventListener("click", addNumber);
 rowOneCellsEl.addEventListener("click", addNumber);
 
