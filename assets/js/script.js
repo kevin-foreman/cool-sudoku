@@ -22,95 +22,101 @@ var puzzleButtonEl = document.querySelector("#btn");
 var puzzleContainerEl = document.querySelector("table");
 var rowZeroCellsEl = document.querySelector("#zero");
 var rowOneCellsEl = document.querySelector("#one");
+var rowTwoCellsEl = document.querySelector("#two");
+var rowThreeCellsEl = document.querySelector("#three");
+var rowFourCellsEl = document.querySelector("#four");
+var rowFiveCellsEl = document.querySelector("#five");
+var rowSixCellsEl = document.querySelector("#six");
+var rowSevenCellsEl = document.querySelector("#seven");
+var rowEightCellsEl = document.querySelector("#eight");
+// var solveButtonEl = document.querySelector("#btn");
 
 // establish the baseline grid for the numbers
 
-// // using an array of pre-defined numbers and shuffle them around
-// var startingPuzzle = [
-//     [5, 3, 0, 0, 7, 0, 0, 0, 0,],
-//     [0, 0, 0, 0, 8, 0, 0, 7, 9,],
-//     [6, 0, 0, 1, 9, 5, 0, 0, 0,],
-//     [0, 0, 0, 4, 1, 9, 0, 0, 5,],
-//     [0, 9, 8, 0, 0, 0, 0, 6, 0,],
-//     [0, 6, 0, 0, 0, 0, 2, 8, 0,],
-//     [8, 0, 0, 0, 6, 0, 0, 0, 3,],
-//     [7, 0, 0, 0, 2, 0, 0, 0, 6,],
-//     [4, 0, 0, 8, 0, 3, 0, 0, 1,]
-// ];
+// Using an empty array and add numbers dynamically with the response from the API
+var userInitGrid = [];
 
-// // shuffle the order of the numbers
-// function shufflePuzzle(array) {
-//     var puzzleIndex = startingPuzzle.length, randomIndex;
-//     while (puzzleIndex != 0) {
-//         randomIndex = Math.floor(Math.random() * puzzleIndex);
-//         puzzleIndex--;
-//         [array[puzzleIndex], array[randomIndex]] = [
-//             array[randomIndex], array[puzzleIndex]
-//         ];
-        
-//     };
-// };
-//         shufflePuzzle(startingPuzzle);
-//         console.log(startingPuzzle);
-    
-
-// Test using an empty grid and add numbers dynamically
-var userInitGrid = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0,]
-]
-
-// function to dynamically generate number fields
-function generateGrid(count, values) {
-    console.log("click")
-    for (i = 0; i < userInitGrid.length; i++) {
-    for (j = 0; j < userInitGrid[i].length; j++) {
-        console.log(userInitGrid[i][j]);
-    }
-    }
-};
-
-
-// pull a puzzle from the API and print to page
+// pull a puzzle from the API
+// push matrix array into empty array
+// if push does not work try to concat
+// how to append the items to the page
+// this will happen on click
+// conditional to ... 
 function generatePuzzle() {
     var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-    fetch(apiUrl).then(function(response) {
-        
-    if (response.ok) {
-        response.json().then(function(data) {
-        // displayPuzzle(data, array);    
-        }) 
-        console.log(response);
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
+        response.json().then(function (data) {
+            // displayPuzzle(data, array);
+        userInitGrid = data.board;
+        generateGrid();
+    
+            console.log(userInitGrid);
+        });
+        }
+        // generatePuzzle();
+    });
+    };
+console.log(userInitGrid);
+// function to dynamically generate number fields
+
+// Create 2 for loops
+// loop through each array of 9 numbers
+// then loop through all 9 arrays
+// inside the first for loop handle the individual rows
+// inside the second for loop will have the actual td content
+// set attribute to each td to get the number in there
+function generateGrid(count, values) {
+// console.log("click");
+for (i = 0; i < userInitGrid.length; i++) {
+    for (j = 0; j < userInitGrid[i].length; j++) {
+    console.log(userInitGrid[i][j]);
     }
-    }) 
-    
-    
+}
 };
-generatePuzzle();
+//  generateGrid();
+
+// function to display the puzzle to the grid
+function displayPuzzle(grid, data) {
+    if (data.length === 0) {
+        puzzleContainerEl.textContent = "No puzzle found.";
+
+    };
+    var puzzleGrid = document.appendChild(tr, td);
+    // console.log(tr, td);
+};
 
 // Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
-    console.log("You clicked a cell!");
-} 
-
+  // console.log("You clicked a cell!");
+}
 
 function buttonClickHandler(event) {
-    var cellClick = event.target.getAttribute("data-cell");
-    // console.log(cell);
-    if (cell) {
+    // use this function to do local storage fetch
+  var cellClick = event.target.getAttribute("data-cell");
+  // console.log(cell);
+  if (cell) {
     puzzle(grid);
 
     grid.textContent = "";
-    }
+  };
 };
 
-puzzleButtonEl.addEventListener("click", generateGrid);
+// how to handle local storage
+// save the matrix to a global variable
+// refresh will go to local storage instead of the fetch
+// on initial page load, grab information from local storage
+
+puzzleButtonEl.addEventListener("click", generatePuzzle);
 rowZeroCellsEl.addEventListener("click", addNumber);
 rowOneCellsEl.addEventListener("click", addNumber);
+rowTwoCellsEl.addEventListener("click", addNumber);
+rowThreeCellsEl.addEventListener("click", addNumber);
+rowFourCellsEl.addEventListener("click", addNumber);
+rowFiveCellsEl.addEventListener("click", addNumber);
+rowSixCellsEl.addEventListener("click", addNumber);
+rowSevenCellsEl.addEventListener("click", addNumber);
+rowEightCellsEl.addEventListener("click", addNumber);
+
+// once the button is clicked, start a timer
+// clicking start timer 
