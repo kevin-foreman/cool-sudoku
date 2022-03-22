@@ -23,15 +23,16 @@
         </h1>
     </header>
     <main>
-    <h2 class="is-flex is-justify-content-center rules-header">The Rules</h2>
+    <h2 class="is-flex is-justify-content-center has-text-weight-bold rules-header">The Rules</h2>
     <p class="is-flex is-justify-content-center rules">Rule 1 - Each row must contain the numbers from 1 to 9, without repetitions</p>
     <p class="is-flex is-justify-content-center rules">Rule 2 - Each column must contain the numbers from 1 to 9, without repetitions</p>
     <p class="is-flex is-justify-content-center rules">Rule 3 - The digits can only occur once per block</p>
 <br/>
 
+<h3 class="is-flex is-justify-content-center"> This is easy let's see if you can finish in 5 minutes </h3>
 <section class="is-flex is-justify-content-center is-align-items-center">
-<table style = "width: 50%" id="border"> 
-    <thead> This is easy let's see if you can finish in 5 minutes </thead>   
+<table style = "width: 50%" id="border" class="mb-5"> 
+    <!-- <thead> This is easy let's see if you can finish in 5 minutes </thead> -->  
     <tr id ="zero" class="row-0">
         <!--First cells -->
         <td contenteditable="true" class="top-left"></td>
@@ -152,8 +153,11 @@
 
 </main>
 
-<button class="startbtn" id="btn">Start Timer</button>
-<button class= "solvebtn" id="btn">Solve</button>
+<div class="buttons mb-5 is-flex is-justify-content-center">
+    <button class="startbtn button is-success is-medium mr-5" id="btn">Start Timer</button>
+    <button class= "solvebtn button is-success is-medium ml-5" id="btn">Solve</button>
+</div>
+
 <script src="./assets/js/script.js"></script>
 </body>
 </html>

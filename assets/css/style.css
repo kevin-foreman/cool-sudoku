@@ -31,52 +31,38 @@ header, h1 {
     color: #fad118;
 }
 
-table, tr, td {
+td {
     border: 1px solid #fad118;
     border-collapse: collapse;
+    width: 66px;
+    height: 66px;
 }
 
 table {
     border: 3px solid #fad118;
-    width: 500px;
-    height: 500px;
+    /*width: 500px;
+    height: 500px;*/
 }
 
 
 .top-left {
-    background: lime;
+    background: #004f0e;
 }
 
-.top-middle {
-    background: greenyellow;
+.top-middle, .middle-left {
+    background: #017516;
 }
 
-.top-right {
-    background: green;
+.top-right, .middle-middle, .bottom-left {
+    background: #03a620;
 }
 
-.middle-left {
-    background: skyblue;
-}
-
-.middle-middle {
-    background: teal;
-}
-
-.middle-right {
-    background: blue;
-}
-
-.bottom-left {
-    background: pink;
-}
-
-.bottom-middle {
-    background: plum;
+.middle-right, .bottom-middle {
+    background: #04d62a;
 }
 
 .bottom-right {
-    background: purple;
+    background: #1bf542;
 }
 
 .row-2, .row-5 {
@@ -86,4 +72,3 @@ table {
 .border {
     border-right: 3px solid #fad118;
 }
-
