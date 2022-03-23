@@ -9,6 +9,7 @@
     <title>Cool-Sudoku</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -25,6 +26,8 @@
         </h1>
     </header>
     <main>
+        <div id ="countdown"></div>
+        
         <h2 class="is-flex is-justify-content-center has-text-weight-bold rules-header mb-3">The Rules</h2>
         <p class="is-flex is-justify-content-center rules"><span class="has-text-weight-bold">Rule 1 - </span> Each row
             must contain the numbers from 1 to 9, without repetitions</p>
@@ -33,6 +36,7 @@
         <p class="is-flex is-justify-content-center rules"><span class="has-text-weight-bold">Rule 3 - </span> The
             digits can only occur once per block</p>
         <br />
+
 
         <h3 class="is-flex is-justify-content-center mb-3"> This is easy let's see if you can finish in 5 minutes </h3>
         <section class="is-flex is-justify-content-center is-align-items-center">
@@ -155,7 +159,6 @@
                 </tr>
             </table>
         </section>
-
     </main>
 
     <div class="buttons mb-5 is-flex is-justify-content-center">

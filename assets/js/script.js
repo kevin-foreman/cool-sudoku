@@ -29,6 +29,7 @@ var rowFiveCellsEl = document.querySelector("#five");
 var rowSixCellsEl = document.querySelector("#six");
 var rowSevenCellsEl = document.querySelector("#seven");
 var rowEightCellsEl = document.querySelector("#eight");
+var timeEl = document.querySelector("#countdown");
 // var solveButtonEl = document.querySelector("#btn");
 
 // establish the baseline grid for the numbers
@@ -119,3 +120,5 @@ rowEightCellsEl.addEventListener("click", addNumber);
 
 // once the button is clicked, start a timer
 // clicking start timer
+
+
