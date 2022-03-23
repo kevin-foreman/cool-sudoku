@@ -28,7 +28,7 @@ function generatePuzzle() {
 // future functionality will replace the "medium" difficulty puzzle call
 // here we call for a medium puzzle
 // future developmemt will include different difficulty buttons and change the API call
-startTimer();
+startTimer();;
 var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
 fetch(apiUrl).then(function (response) {
     if (response.ok) {
