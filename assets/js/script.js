@@ -6,12 +6,6 @@
 
 //  end the user's turn if time runs out
 
-// notes for class: Need to add moment to the html
-// need to remove one of the "this is easy..."
-// Bulma has it's own button styling, so we need to figure out which style of button we want so we can add that to the html as well
-// looking through jQuery documentation for a grid style layout to generate dynamically
-// formatting api URL from noon today
-// One option for generating the puzzle could be starting with the same puzzle hints and just shuffle them around each time the user restarts
 // add data-cell="1" ,, data-cell="2" ,, data-cell="3" etc... to html???
 // trim the html down to just 9 columns and nine rows and use JS to dynamically add the content from the API call
 // if we go with hard coded cells (which is fine) consider adding "contenteditable="true" so the user can input text
@@ -35,8 +29,10 @@ var timeEl = document.querySelector("#countdown");
 
 // establish the baseline grid for the numbers
 
-// Using an empty array and add numbers dynamically with the response from the API
+// Use an empty array and add numbers dynamically with the response from the API
 var userInitGrid = [];
+var solvedGrid =[];
+
 
 // pull a puzzle from the API
 // push matrix array into empty array
@@ -51,7 +47,9 @@ function generatePuzzle() {
       response.json().then(function (data) {
         // displayPuzzle(data, array);
         userInitGrid = data.board;
+        solvedGrid = data.solved;
         generateGrid();
+<<<<<<< HEAD
 
         console.log(userInitGrid);
       });
@@ -60,6 +58,16 @@ function generatePuzzle() {
   });
 }
 console.log(userInitGrid);
+=======
+    
+            console.log(userInitGrid);
+        });
+        }
+        // generatePuzzle();
+    });
+    };
+
+>>>>>>> 18ca779b1caf7ab3366e1a70c6d1c47cb8c75e63
 // function to dynamically generate number fields
 
 // Create 2 for loops
@@ -67,11 +75,13 @@ console.log(userInitGrid);
 // then loop through all 9 arrays
 // inside the first for loop handle the individual rows
 // inside the second for loop will have the actual td content
-// set attribute to each td to get the number in there
+// set attribute to each td to get the number in there?
+
 function generateGrid(count, values) {
   // console.log("click");
   for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
+<<<<<<< HEAD
       console.log(userInitGrid[i][j]);
     }
   }
@@ -86,11 +96,35 @@ function displayPuzzle(grid, data) {
   var puzzleGrid = document.appendChild(tr, td);
   // console.log(tr, td);
 }
+=======
+    console.log(userInitGrid[i][j]);
+    document.querySelector('tr:nth-child('+(i + 1) + ') > td:nth-child('+(j + 1) + ')').textContent = '';
+    if (userInitGrid[i][j])
+        document.querySelector('tr:nth-child(' + (i + 1) + ') > td:nth-child(' + (j + 1) + ')').textContent = userInitGrid[i][j];
+    };
+};
 
-// Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
+};
+
+
+// function to display the puzzle to the grid
+function displayPuzzle(grid, data) {
+    if (userInitGrid.length === 0) {
+        puzzleContainerEl.textContent = "No puzzle found.";
+
+    };
+    function puzzlePush() {
+        userInitGrid.push
+    } 
+    // console.log(tr, td);
+};
+>>>>>>> 18ca779b1caf7ab3366e1a70c6d1c47cb8c75e63
+
+// Add function to listen for what number a user puts into a cell
+// Append that number to the userInitGrid array in the right location
 function addNumber() {
   // console.log("You clicked a cell!");
-}
+};
 
 function buttonClickHandler(event) {
   // use this function to do local storage fetch
@@ -120,6 +154,7 @@ rowSevenCellsEl.addEventListener("click", addNumber);
 rowEightCellsEl.addEventListener("click", addNumber);
 
 // once the button is clicked, start a timer
+<<<<<<< HEAD
 // clicking start timer
 //Setting this attribute to true will cause the timer to start once instantiated.
 // new moment.duration(1000).timer({ start: true }, callback);
@@ -164,3 +199,10 @@ if (min == 0 && sec == 0)
 }, 1000);
 
 
+=======
+// clicking start timer 
+
+function gameTimer() {
+    moment();
+};
+>>>>>>> 18ca779b1caf7ab3366e1a70c6d1c47cb8c75e63
