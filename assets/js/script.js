@@ -69,9 +69,9 @@ function generateGrid(count, values) {
 for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
     console.log(userInitGrid[i][j]);
-    document.querySelector('tr:nth-child('+(i + 1) + ') > td:nth-child('+(j + 1) + ')').html('');
+    document.querySelector('tr:nth-child('+(i + 1) + ') > td:nth-child('+(j + 1) + ')').textContent = '';
     if (userInitGrid[i][j])
-        document.querySelector('tr:nth-child(' + (i + 1) + ') > td:nth-child(' + (j + 1) + ')').html(userInitGrid[i][j]);
+        document.querySelector('tr:nth-child(' + (i + 1) + ') > td:nth-child(' + (j + 1) + ')').textContent = userInitGrid[i][j];
     };
 };
 
