@@ -25,12 +25,9 @@ var solvedGrid =[];
 // set the value of the global array to the newly array fetched from the API
 // this will happen on click of "Start"
 function generatePuzzle() {
-// future functionality will replace the "medium" difficulty puzzle call
-// here we call for a medium puzzle
-// future developmemt will include different difficulty buttons and change the API call
-startTimer();;
-var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-fetch(apiUrl).then(function (response) {
+    startTimer();
+  var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
+  fetch(apiUrl).then(function (response) {
     if (response.ok) {
     response.json().then(function (data) {
         // displayPuzzle(data, array);
@@ -102,7 +99,7 @@ function startTimer() {
 var duration = moment.duration({
     'minutes': 5,
     'seconds': 00
-});
+});git
 
 var timestamp = new Date(0, 0, 0, 2, 10, 30);
 var interval = 1;
