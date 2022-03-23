@@ -35,19 +35,18 @@ header, h1 {
 }
 
 td {
-    border: 1px solid #fad118;
+    border: 1px solid black;
     border-collapse: collapse;
     width: 66px;
     height: 66px;
     font-size: 40px;
     font-weight: bold;
-    padding-left: 15px;
+    padding-left: 17px;
 }
 
 table {
-    border: 3px solid #fad118;
-    /*width: 500px;
-    height: 500px;*/
+    border: 4px solid black;
+    table-layout: fixed;
 }
 
 .top-left {
@@ -76,10 +75,11 @@ table {
 }
 
 .row-2, .row-5 {
-    border-bottom: 3px solid #fad118;
+    border-bottom: 4px solid black;
 }
 
 .border {
+<<<<<<< HEAD
     border-right: 3px solid #fad118;
 <<<<<<< HEAD
 }
@@ -87,3 +87,11 @@ table {
 }
 
 >>>>>>> acc8aaa28b172b1674bbb968fdcd0f3036675030
+=======
+    border-right: 4px solid black;
+}
+
+.startbtn, .solvebtn {
+    background: #fad118;
+}
+>>>>>>> 7c6a85666ce85c2c9dcf90a68d8794c53be508ac
