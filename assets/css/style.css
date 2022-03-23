@@ -34,6 +34,10 @@ header, h1 {
     color: #fad118;
 }
 
+.timer {
+    font-size: 25px;
+}
+
 td {
     border: 1px solid black;
     border-collapse: collapse;
