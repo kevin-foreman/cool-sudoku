@@ -30,6 +30,7 @@ var rowSixCellsEl = document.querySelector("#six");
 var rowSevenCellsEl = document.querySelector("#seven");
 var rowEightCellsEl = document.querySelector("#eight");
 var timeEl = document.querySelector("#countdown");
+
 // var solveButtonEl = document.querySelector("#btn");
 
 // establish the baseline grid for the numbers
@@ -121,12 +122,45 @@ rowEightCellsEl.addEventListener("click", addNumber);
 // once the button is clicked, start a timer
 // clicking start timer
 //Setting this attribute to true will cause the timer to start once instantiated.
-new moment.duration(1000).timer({ start: true }, callback);
+// new moment.duration(1000).timer({ start: true }, callback);
 //This function will cause the timer to start. It can be used if the start attribute has not been set or if the timer has been stopped.
-let timer = new moment.duration(1000).timer(callback);
-timer.start();
+// let timer = new moment.duration(1000).timer(callback);
+// timer.start();
 //This function will cause the timer to stop. It can be used if timer has been started to halt it.
-let timer = new moment.duration(1000).timer({ start: true }, callback);
-timer.stop();
+// let timer = new moment.duration(1000).timer({ start: true }, callback);
+// timer.stop();
 
-var 
+// var 
+
+
+var duration = moment.duration({
+    'minutes': 5,
+    'seconds': 00
+  
+  });
+
+var timestamp = new Date(0, 0, 0, 2, 10, 30);
+var interval = 1;
+var timer = setInterval(function() {
+timestamp = new Date(timestamp.getTime() + interval * 1000);
+
+duration = moment.duration(duration.asSeconds() - interval, 'seconds');
+var min = duration.minutes();
+var sec = duration.seconds();
+
+sec -= 1;
+if (min < 0) return clearInterval(timer);
+if (min < 10 && min.length != 2) min = '0' + min;
+if (sec < 0 && min != 0) {
+  min -= 1;
+  sec = 59;
+} else if (sec < 10 && sec.length != 2) sec = '0' + sec;
+
+timeEl.textContent= (min + ':' + sec);
+if (min == 0 && sec == 0)
+  clearInterval(timer);
+
+
+}, 1000);
+
+
