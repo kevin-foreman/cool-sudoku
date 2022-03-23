@@ -41,6 +41,7 @@ var solvedGrid =[];
 // this will happen on click
 // conditional to ...
 function generatePuzzle() {
+    startTimer();
   var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
@@ -130,6 +131,7 @@ rowEightCellsEl.addEventListener("click", addNumber);
 // clicking start btn 
 
 function startTimer() {
+    
 var duration = moment.duration({
     'minutes': 5,
     'seconds': 00
@@ -153,7 +155,7 @@ if (sec < 0 && min != 0) {
 } else if (sec < 10 && sec.length != 2) sec = '0' + sec;
 
 timeEl.textContent= (min + ':' + sec);
-if (min === 0 && sec === 0)
+if (min == 0 && sec == 0)
   clearInterval(timer);
 
 }, 1000);
