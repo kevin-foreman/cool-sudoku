@@ -129,4 +129,4 @@ timer.start();
 let timer = new moment.duration(1000).timer({ start: true }, callback);
 timer.stop();
 
-var 
+
