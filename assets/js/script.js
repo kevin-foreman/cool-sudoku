@@ -120,5 +120,13 @@ rowEightCellsEl.addEventListener("click", addNumber);
 
 // once the button is clicked, start a timer
 // clicking start timer
+//Setting this attribute to true will cause the timer to start once instantiated.
+new moment.duration(1000).timer({ start: true }, callback);
+//This function will cause the timer to start. It can be used if the start attribute has not been set or if the timer has been stopped.
+let timer = new moment.duration(1000).timer(callback);
+timer.start();
+//This function will cause the timer to stop. It can be used if timer has been started to halt it.
+let timer = new moment.duration(1000).timer({ start: true }, callback);
+timer.stop();
 
-
+var 
