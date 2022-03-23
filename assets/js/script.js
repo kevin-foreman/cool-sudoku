@@ -41,22 +41,22 @@ var userInitGrid = [];
 // if push does not work try to concat
 // how to append the items to the page
 // this will happen on click
-// conditional to ... 
+// conditional to ...
 function generatePuzzle() {
-    var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-    fetch(apiUrl).then(function (response) {
-        if (response.ok) {
-        response.json().then(function (data) {
-            // displayPuzzle(data, array);
+  var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
+  fetch(apiUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        // displayPuzzle(data, array);
         userInitGrid = data.board;
         generateGrid();
-    
-            console.log(userInitGrid);
-        });
-        }
-        // generatePuzzle();
-    });
-    };
+
+        console.log(userInitGrid);
+      });
+    }
+    // generatePuzzle();
+  });
+}
 console.log(userInitGrid);
 // function to dynamically generate number fields
 
@@ -67,24 +67,23 @@ console.log(userInitGrid);
 // inside the second for loop will have the actual td content
 // set attribute to each td to get the number in there
 function generateGrid(count, values) {
-// console.log("click");
-for (i = 0; i < userInitGrid.length; i++) {
+  // console.log("click");
+  for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
-    console.log(userInitGrid[i][j]);
+      console.log(userInitGrid[i][j]);
     }
+  }
 }
-};
 //  generateGrid();
 
 // function to display the puzzle to the grid
 function displayPuzzle(grid, data) {
-    if (data.length === 0) {
-        puzzleContainerEl.textContent = "No puzzle found.";
-
-    };
-    var puzzleGrid = document.appendChild(tr, td);
-    // console.log(tr, td);
-};
+  if (data.length === 0) {
+    puzzleContainerEl.textContent = "No puzzle found.";
+  }
+  var puzzleGrid = document.appendChild(tr, td);
+  // console.log(tr, td);
+}
 
 // Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
@@ -92,15 +91,15 @@ function addNumber() {
 }
 
 function buttonClickHandler(event) {
-    // use this function to do local storage fetch
+  // use this function to do local storage fetch
   var cellClick = event.target.getAttribute("data-cell");
   // console.log(cell);
   if (cell) {
     puzzle(grid);
 
     grid.textContent = "";
-  };
-};
+  }
+}
 
 // how to handle local storage
 // save the matrix to a global variable
@@ -119,4 +118,4 @@ rowSevenCellsEl.addEventListener("click", addNumber);
 rowEightCellsEl.addEventListener("click", addNumber);
 
 // once the button is clicked, start a timer
-// clicking start timer 
+// clicking start timer

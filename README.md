@@ -12,14 +12,13 @@ We wanted our game to apeal to the first time user, the novice and those that ma
 Our game is simple yet challenging and we belive it is just the right stepping stone to begin a love of Sudoku.
 
 ## API Reference 
+"https://sugoku.herokuapp.com/board?"
 
-## Acknowledgements
-https://nowispow.com/html-table-sudoku (inspiration)
+
 ## Contributors
 Kevin Foreman
 Samantha Wolff 
 Monica Solano
-## Deployment
 
 ## Screenshots
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
