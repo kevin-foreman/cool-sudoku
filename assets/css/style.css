@@ -39,6 +39,9 @@ td {
     border-collapse: collapse;
     width: 66px;
     height: 66px;
+    font-size: 40px;
+    font-weight: bold;
+    padding-left: 15px;
 }
 
 table {
@@ -49,22 +52,27 @@ table {
 
 .top-left {
     background: #004f0e;
+    color: #1bf542;
 }
 
 .top-middle, .middle-left {
     background: #017516;
+    color: #04d62a;
 }
 
 .top-right, .middle-middle, .bottom-left {
     background: #03a620;
+    color: #017516;
 }
 
 .middle-right, .bottom-middle {
     background: #04d62a;
+    color: #017516;
 }
 
 .bottom-right {
     background: #1bf542;
+    color: #004f0e;
 }
 
 .row-2, .row-5 {
