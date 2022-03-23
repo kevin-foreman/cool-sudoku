@@ -29,6 +29,8 @@ var rowFiveCellsEl = document.querySelector("#five");
 var rowSixCellsEl = document.querySelector("#six");
 var rowSevenCellsEl = document.querySelector("#seven");
 var rowEightCellsEl = document.querySelector("#eight");
+var timeEl = document.querySelector("#countdown");
+
 // var solveButtonEl = document.querySelector("#btn");
 
 // establish the baseline grid for the numbers
@@ -41,22 +43,22 @@ var userInitGrid = [];
 // if push does not work try to concat
 // how to append the items to the page
 // this will happen on click
-// conditional to ... 
+// conditional to ...
 function generatePuzzle() {
-    var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-    fetch(apiUrl).then(function (response) {
-        if (response.ok) {
-        response.json().then(function (data) {
-            // displayPuzzle(data, array);
+  var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
+  fetch(apiUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        // displayPuzzle(data, array);
         userInitGrid = data.board;
         generateGrid();
-    
-            console.log(userInitGrid);
-        });
-        }
-        // generatePuzzle();
-    });
-    };
+
+        console.log(userInitGrid);
+      });
+    }
+    // generatePuzzle();
+  });
+}
 console.log(userInitGrid);
 // function to dynamically generate number fields
 
@@ -67,24 +69,23 @@ console.log(userInitGrid);
 // inside the second for loop will have the actual td content
 // set attribute to each td to get the number in there
 function generateGrid(count, values) {
-// console.log("click");
-for (i = 0; i < userInitGrid.length; i++) {
+  // console.log("click");
+  for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
-    console.log(userInitGrid[i][j]);
+      console.log(userInitGrid[i][j]);
     }
+  }
 }
-};
 //  generateGrid();
 
 // function to display the puzzle to the grid
 function displayPuzzle(grid, data) {
-    if (data.length === 0) {
-        puzzleContainerEl.textContent = "No puzzle found.";
-
-    };
-    var puzzleGrid = document.appendChild(tr, td);
-    // console.log(tr, td);
-};
+  if (data.length === 0) {
+    puzzleContainerEl.textContent = "No puzzle found.";
+  }
+  var puzzleGrid = document.appendChild(tr, td);
+  // console.log(tr, td);
+}
 
 // Add function to allow user to input a number from 1-9 into each cell using event delegation after they click on a a cell
 function addNumber() {
@@ -92,15 +93,15 @@ function addNumber() {
 }
 
 function buttonClickHandler(event) {
-    // use this function to do local storage fetch
+  // use this function to do local storage fetch
   var cellClick = event.target.getAttribute("data-cell");
   // console.log(cell);
   if (cell) {
     puzzle(grid);
 
     grid.textContent = "";
-  };
-};
+  }
+}
 
 // how to handle local storage
 // save the matrix to a global variable
@@ -119,4 +120,47 @@ rowSevenCellsEl.addEventListener("click", addNumber);
 rowEightCellsEl.addEventListener("click", addNumber);
 
 // once the button is clicked, start a timer
-// clicking start timer 
+// clicking start timer
+//Setting this attribute to true will cause the timer to start once instantiated.
+// new moment.duration(1000).timer({ start: true }, callback);
+//This function will cause the timer to start. It can be used if the start attribute has not been set or if the timer has been stopped.
+// let timer = new moment.duration(1000).timer(callback);
+// timer.start();
+//This function will cause the timer to stop. It can be used if timer has been started to halt it.
+// let timer = new moment.duration(1000).timer({ start: true }, callback);
+// timer.stop();
+
+// var 
+
+
+var duration = moment.duration({
+    'minutes': 5,
+    'seconds': 00
+  
+  });
+
+var timestamp = new Date(0, 0, 0, 2, 10, 30);
+var interval = 1;
+var timer = setInterval(function() {
+timestamp = new Date(timestamp.getTime() + interval * 1000);
+
+duration = moment.duration(duration.asSeconds() - interval, 'seconds');
+var min = duration.minutes();
+var sec = duration.seconds();
+
+sec -= 1;
+if (min < 0) return clearInterval(timer);
+if (min < 10 && min.length != 2) min = '0' + min;
+if (sec < 0 && min != 0) {
+  min -= 1;
+  sec = 59;
+} else if (sec < 10 && sec.length != 2) sec = '0' + sec;
+
+timeEl.textContent= (min + ':' + sec);
+if (min == 0 && sec == 0)
+  clearInterval(timer);
+
+
+}, 1000);
+
+
