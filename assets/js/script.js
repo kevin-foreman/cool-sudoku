@@ -49,7 +49,6 @@ function generatePuzzle() {
         userInitGrid = data.board;
         solvedGrid = data.solved;
         generateGrid();
-<<<<<<< HEAD
 
         console.log(userInitGrid);
       });
@@ -58,16 +57,6 @@ function generatePuzzle() {
   });
 }
 console.log(userInitGrid);
-=======
-    
-            console.log(userInitGrid);
-        });
-        }
-        // generatePuzzle();
-    });
-    };
-
->>>>>>> 18ca779b1caf7ab3366e1a70c6d1c47cb8c75e63
 // function to dynamically generate number fields
 
 // Create 2 for loops
@@ -81,22 +70,6 @@ function generateGrid(count, values) {
   // console.log("click");
   for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
-<<<<<<< HEAD
-      console.log(userInitGrid[i][j]);
-    }
-  }
-}
-//  generateGrid();
-
-// function to display the puzzle to the grid
-function displayPuzzle(grid, data) {
-  if (data.length === 0) {
-    puzzleContainerEl.textContent = "No puzzle found.";
-  }
-  var puzzleGrid = document.appendChild(tr, td);
-  // console.log(tr, td);
-}
-=======
     console.log(userInitGrid[i][j]);
     document.querySelector('tr:nth-child('+(i + 1) + ') > td:nth-child('+(j + 1) + ')').textContent = '';
     if (userInitGrid[i][j])
@@ -118,7 +91,6 @@ function displayPuzzle(grid, data) {
     } 
     // console.log(tr, td);
 };
->>>>>>> 18ca779b1caf7ab3366e1a70c6d1c47cb8c75e63
 
 // Add function to listen for what number a user puts into a cell
 // Append that number to the userInitGrid array in the right location
@@ -154,7 +126,6 @@ rowSevenCellsEl.addEventListener("click", addNumber);
 rowEightCellsEl.addEventListener("click", addNumber);
 
 // once the button is clicked, start a timer
-<<<<<<< HEAD
 // clicking start timer
 //Setting this attribute to true will cause the timer to start once instantiated.
 // new moment.duration(1000).timer({ start: true }, callback);
@@ -199,10 +170,3 @@ if (min == 0 && sec == 0)
 }, 1000);
 
 
-=======
-// clicking start timer 
-
-function gameTimer() {
-    moment();
-};
->>>>>>> 18ca779b1caf7ab3366e1a70c6d1c47cb8c75e63
