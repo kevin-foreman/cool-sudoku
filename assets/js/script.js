@@ -33,10 +33,8 @@ var solvedGrid =[];
 
 
 // pull a puzzle from the API
-// push matrix array into empty array
-// if push does not work try to concat
-// how to append the items to the page
-// this will happen on click
+// set the value of the global userInitGrid array to the newly pulled array
+// this will happen on click of "Start"
 // conditional to ... 
 function generatePuzzle() {
     var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
@@ -57,12 +55,12 @@ function generatePuzzle() {
 
 // function to dynamically generate number fields
 
-// Create 2 for loops
+
 // loop through each array of 9 numbers
 // then loop through all 9 arrays
 // inside the first for loop handle the individual rows
 // inside the second for loop will have the actual td content
-// set attribute to each td to get the number in there?
+// check
 
 function generateGrid(count, values) {
 // console.log("click");
@@ -74,7 +72,6 @@ for (i = 0; i < userInitGrid.length; i++) {
         document.querySelector('tr:nth-child(' + (i + 1) + ') > td:nth-child(' + (j + 1) + ')').textContent = userInitGrid[i][j];
     };
 };
-
 };
 
 
