@@ -79,19 +79,9 @@ table {
 }
 
 .border {
-<<<<<<< HEAD
-    border-right: 3px solid #fad118;
-<<<<<<< HEAD
-}
-=======
-}
-
->>>>>>> acc8aaa28b172b1674bbb968fdcd0f3036675030
-=======
     border-right: 4px solid black;
 }
 
 .startbtn, .solvebtn {
     background: #fad118;
 }
->>>>>>> 7c6a85666ce85c2c9dcf90a68d8794c53be508ac
