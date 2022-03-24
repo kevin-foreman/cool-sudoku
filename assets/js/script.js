@@ -25,23 +25,12 @@ var solvedGrid =[];
 // set the value of the global array to the newly array fetched from the API
 // this will happen on click of "Start"
 function generatePuzzle() {
-<<<<<<< HEAD
-    startTimer();
-<<<<<<< HEAD
-  var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-  fetch(apiUrl).then(function (response) {
-=======
 // future functionality will replace the "medium" difficulty puzzle call
 // here we call for a medium puzzle
 // future developmemt will include different difficulty buttons and change the API call
 startTimer();;
 var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
 fetch(apiUrl).then(function (response) {
->>>>>>> feature/app-styling
-=======
-    var apiUrl = "https://sugoku.herokuapp.com/board?difficulty=medium";
-    fetch(apiUrl).then(function (response) {
->>>>>>> 1d60fa5d32047cc153beeca475c0d3fddca93067
     if (response.ok) {
     response.json().then(function (data) {
         // displayPuzzle(data, array);
@@ -62,8 +51,10 @@ fetch(apiUrl).then(function (response) {
 // this function takes in the global array and iterates through it
 // next as it iterates through it, it adds the numbers to the page
 function generateGrid(count, values) {
+  // console.log("click");
     for (i = 0; i < userInitGrid.length; i++) {
     for (j = 0; j < userInitGrid[i].length; j++) {
+    console.log(userInitGrid[i][j]);
     document.querySelector('tr:nth-child('+(i + 1) + ') > td:nth-child('+(j + 1) + ')').textContent = '';
     if (userInitGrid[i][j])
         document.querySelector('tr:nth-child(' + (i + 1) + ') > td:nth-child(' + (j + 1) + ')').textContent = userInitGrid[i][j];
@@ -74,6 +65,7 @@ function generateGrid(count, values) {
 // Add function to listen for what number a user puts into a cell
 // Append that number to the userInitGrid array in the right location
 function addNumber() {
+  // console.log("You clicked a cell!");
 };
 
 function buttonClickHandler(event) {
@@ -130,8 +122,8 @@ if (sec < 0 && min != 0) {
 } else if (sec < 10 && sec.length != 2) sec = '0' + sec;
 
 timeEl.textContent= (min + ':' + sec);
-if (min === 0 && sec === 0)
-    clearInterval(timer);
+if (min == 0 && sec == 0)
+  clearInterval(timer);
 
 }, 1000);
 };
