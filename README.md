@@ -13,15 +13,17 @@ Our game is simple yet challenging and we belive it is just the right stepping s
 
 ## API Reference 
 "https://sugoku.herokuapp.com/board?"
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-timer/lib/moment-timer.js"></script>
 
 ## Contributors
-Kevin Foreman
-Samantha Wolff 
-Monica Solano
+Kevin Foreman  https://github.com/kevin-foreman
+Samantha Wolff https://github.com/samanthawolff 
+Monica Solano  https://github.com/Bluebear1701
 
 ## Screenshots
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./assets/screenshot-sudoku.PNG)
+
 
 ## 🔗 Links
 https://www.w3schools.com/
