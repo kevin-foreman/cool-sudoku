@@ -29,3 +29,4 @@ Monica Solano  https://github.com/Bluebear1701
 https://www.w3schools.com/
 
 https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css
+https://kevin-foreman.github.io/cool-sudoku/
