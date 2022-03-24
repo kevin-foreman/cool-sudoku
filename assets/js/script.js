@@ -99,7 +99,7 @@ function startTimer() {
 var duration = moment.duration({
     'minutes': 5,
     'seconds': 00
-});git
+});
 
 var timestamp = new Date(0, 0, 0, 2, 10, 30);
 var interval = 1;
